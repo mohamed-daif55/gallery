@@ -1,0 +1,13 @@
+<html xmlns="http://www.thymleaf.org">
+<head>
+<title>home</title>
+</head>
+<body>
+	<div>
+		<form method="post" th:action="@{/upload}" th:object="${img}" enctype="multipart/form-data">
+			<input type="file" name="image" accept="image/png , image/jpg, image/gif" >
+			<button type="submit">Upload image</button>
+		</form>
+	</div>
+</body>
+</html>

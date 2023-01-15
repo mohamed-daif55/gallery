@@ -1,0 +1,19 @@
+<html xmlns="http://www.thymleaf.org">
+<head>
+<title>Sign Up</title>
+</head>
+<body>
+	<div >
+		<h2>Sign Up</h2>
+		<hr/>
+		<form th:action="@{/saveUser}" th:object="${user}" method="POST">
+			<input type="text" th:field="*{email}" placeholder="Enter Email"/>
+			<input type="text" th:field="*{address}" placeholder="Enter Address"/>
+			<input type="password" th:field="*{password}" placeholder="Enter Password"/>
+			<button class="btn btn-primary" type="submit">save</button>
+		</form>
+		<hr/>
+		<a th:href=@{/home}>Back To Home</a>
+	</div>
+</body>
+</html>
