@@ -4,9 +4,20 @@
 </head>
 <body>
 	<div>
-		<form method="post" th:action="@{/upload}" th:object="${img}" enctype="multipart/form-data">
-			<input type="file" name="image" accept="image/png , image/jpg, image/gif" >
+		<form method="post" th:action="@{/upload}" th:object="${img}"
+			enctype="multipart/form-data">
+			<input type="file" name="image"
+				accept="image/png , image/jpg, image/gif">
 			<button type="submit">Upload image</button>
+			<hr/>
+			<select th:field="*{categories}">
+				<option value="1">living thing</option>
+				<option value="2">machine</option>
+				<option value="3">nature</option>
+			</select>
+			<hr/>
+			<textarea type="text" th:field="*{description}"
+				placeholder="Enter Description" rows="5" cols="60" />
 		</form>
 	</div>
 </body>
