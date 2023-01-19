@@ -6,7 +6,7 @@
 	<div>
 		<h2 style="color : red;">[[${error}]]</h2>
 	</div>
-	<a th:href=@{/logOut} th:if="${condition}">Log Out</a>
+	<a th:href=@{/logOutAdmin} th:if="${condition}">Log Out</a>
 	<table id="example" th:if="${condition}">
         <thead>
             <tr>
@@ -18,11 +18,16 @@
                 <td>
                 	<img th:src="|/images/${image.path}|" />
                 </td>
+                <td th:text="${image.id}" />
+                <td>
+	                <form th:action="@{'/acceptOrReject/'+${image}}" th:object="${img}" method="POST">
+						<button type="submit" value="accept">Accept</button>
+						<button type="submit"  value="reject">Reject</button>
+					</form>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div th:each = "image : ${images}" th:unless="${condition}">
-    	<a th:href="|/images/${image.path}|" th:target="_blank" th:utext="|${image.path}|"></a>
-    </div>
+
 </body>
 </html>

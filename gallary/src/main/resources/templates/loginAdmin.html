@@ -1,16 +1,17 @@
 <html xmlns="http://www.thymleaf.org">
 <head>
-<title>Sign Up</title>
+<title>Login</title>
 </head>
 <body>
 	<div >
-		<h2>Sign Up</h2>
+		<h2>Login</h2>
 		<hr/>
-		<form th:action="@{/saveUser}" th:object="${user}" method="POST">
+		<h2 style="color : red;">[[${error}]]</h2>
+		<hr/>
+		<form th:action="@{/loginAdminCredentials}" th:object="${user}" method="GET">
 			<input type="text" th:field="*{email}" placeholder="Enter Email"/>
-			<input type="text" th:field="*{address}" placeholder="Enter Address"/>
 			<input type="password" th:field="*{password}" placeholder="Enter Password"/>
-			<button type="submit">save</button>
+			<button type="submit">Login</button>
 		</form>
 		<hr/>
 		<a th:href=@{/index}>Back To Home</a>

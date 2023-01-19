@@ -29,6 +29,8 @@ public class Pictures {
 	private String description;
 	@Column(name = "categories")
 	private Integer categories;
+	@Column(name = "marked")
+	private String marked;
 	@ManyToOne()
 	@JoinColumn(name = "user_id")
 	private Users userId;
